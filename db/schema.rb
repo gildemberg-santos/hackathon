@@ -10,17 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_05_234429) do
-  create_table "leads", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_11_06_010354) do
+  create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.string "phone"
     t.string "email"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "leads", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "email"
+    t.string "country"
+    t.string "state"
+    t.string "city"
+    t.integer "age"
+    t.string "sex"
+    t.string "communication_channel"
+    t.string "source_of_acquisition"
+    t.integer "company_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_leads_on_company_id"
+  end
+
   create_table "sales", force: :cascade do |t|
     t.integer "amount"
+    t.boolean "sold"
     t.integer "vehicle_id", null: false
     t.integer "lead_id", null: false
     t.datetime "created_at", null: false
@@ -37,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_05_234429) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "leads", "companies"
   add_foreign_key "sales", "leads"
   add_foreign_key "sales", "vehicles"
 end

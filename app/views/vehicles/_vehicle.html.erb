@@ -1,8 +1,17 @@
-<tr id="<%= dom_id vehicle %>">
-  <td><%= vehicle.name %></td>
-  <td><%= vehicle.year %></td>
-  <td><%= vehicle.price %></td>
-  <td><%= link_to "Show", vehicle %></td>
-  <td><%= link_to "Edit", edit_vehicle_path(vehicle) %></td>
-  <td><%= button_to "Destroy", vehicle, method: :delete, data: { confirm: 'Are you sure?' } %><td>
-</tr>
+<div id="<%= dom_id vehicle %>">
+  <p>
+    <strong>Name:</strong>
+    <%= vehicle.name %>
+  </p>
+
+  <p>
+    <strong>Year:</strong>
+    <%= vehicle.year %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= vehicle.price %>
+  </p>
+
+</div>
