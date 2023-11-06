@@ -10,5 +10,7 @@ FactoryBot.define do
     state { Faker::Address.state }
     city { Faker::Address.city }
     age { Faker::Number.between(from: 18, to: 65) }
+    communication_channel { %w[phone email whatsapp].sample }
+    source_of_acquisition { %w[facebook instagram linkedin google].sample }
   end
 end

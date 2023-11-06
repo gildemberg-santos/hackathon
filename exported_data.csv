@@ -1,0 +1,8 @@
+sale_id,sale_amount,sale_sold,sale_vehicle_id,sale_lead_id,sale_created_at,sale_updated_at
+lead_id,lead_name,lead_phone,lead_email,lead_country,lead_state,lead_city,lead_age,lead_sex,lead_communication_channel,lead_source_of_acquisition,lead_company_id,lead_created_at,lead_updated_at
+company_id,company_name,company_email,company_phone,company_created_at,company_updated_at
+vehicle_id,vehicle_name,vehicle_year,vehicle_price,vehicle_created_at,vehicle_updated_at
+3,1,true,32,8,2023-11-06 01:45:11 UTC,2023-11-06 01:45:11 UTC
+8,Arron,951.803.8802,ossie.steuber@olson.example,Faroe Islands,Florida,Pagacstad,34,male,email,instagram,11,2023-11-06 01:45:11 UTC,2023-11-06 01:45:11 UTC
+11,Blanda and Sons,kiley_luettgen@volkman.test,675.706.0594 x615,2023-11-06 01:45:11 UTC,2023-11-06 01:45:11 UTC
+32,Mobi,2021,57.034,2023-11-05 22:46:05 UTC,2023-11-05 23:15:00 UTC

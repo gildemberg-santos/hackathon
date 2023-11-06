@@ -1,5 +1,11 @@
 # README
 
+Export
+
+```shell
+rake export:to_csv
+```
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
