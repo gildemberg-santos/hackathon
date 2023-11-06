@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_03_021915) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_05_234429) do
+  create_table "leads", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.integer "amount"
+    t.integer "vehicle_id", null: false
+    t.integer "lead_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lead_id"], name: "index_sales_on_lead_id"
+    t.index ["vehicle_id"], name: "index_sales_on_vehicle_id"
+  end
+
   create_table "vehicles", force: :cascade do |t|
     t.string "name"
     t.integer "year"
@@ -19,4 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_03_021915) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "sales", "leads"
+  add_foreign_key "sales", "vehicles"
 end
