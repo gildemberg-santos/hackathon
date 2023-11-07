@@ -9,19 +9,18 @@ namespace :export do
       lead_columns = Lead.column_names.map { |c| "lead_#{c}" }
       company_columns = Company.column_names.map { |c| "company_#{c}" }
       vehicle_columns = Vehicle.column_names.map { |c| "vehicle_#{c}" }
-      csv << sales_columns
-      csv << lead_columns
-      csv << company_columns
-      csv << vehicle_columns
+
+      heads = sales_columns + lead_columns + company_columns + vehicle_columns
+      csv << heads
+
       data.each do |item|
         sales_values = item.attributes.values
         leads_values = item.lead.attributes.values
         companies_values = item.lead.company.attributes.values
         vehicles_values = item.vehicle.attributes.values
-        csv << sales_values
-        csv << leads_values
-        csv << companies_values
-        csv << vehicles_values
+
+        body = sales_values + leads_values + companies_values + vehicles_values
+        csv << body
       end
     end
 
